@@ -80,7 +80,7 @@ namespace GameFramework.Debugger
         /// <summary>
         /// 关闭并清理调试管理器。
         /// </summary>
-        internal override void Shutdown()
+        internal void Shutdown()
         {
             m_ActiveWindow = false;
             m_DebuggerWindowRoot.Shutdown();
@@ -96,12 +96,12 @@ namespace GameFramework.Debugger
         {
             if (string.IsNullOrEmpty(path))
             {
-                throw new GameFrameworkException("Path is invalid.");
+                throw new System.Exception("Path is invalid.");
             }
 
             if (debuggerWindow == null)
             {
-                throw new GameFrameworkException("Debugger window is invalid.");
+                throw new System.Exception("Debugger window is invalid.");
             }
 
             m_DebuggerWindowRoot.RegisterDebuggerWindow(path, debuggerWindow);

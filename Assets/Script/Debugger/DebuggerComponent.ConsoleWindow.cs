@@ -9,53 +9,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace GameFramework.Debugger
 {
     public partial class DebuggerComponent
     {
-
-        //
-        // 摘要:
-        //     调试窗口接口。
-        public interface IDebuggerWindow
-        {
-            //
-            // 摘要:
-            //     初始化调试窗口。
-            //
-            // 参数:
-            //   args:
-            //     初始化调试窗口参数。
-            void Initialize(params object[] args);
-            //
-            // 摘要:
-            //     调试窗口绘制。
-            void OnDraw();
-            //
-            // 摘要:
-            //     进入调试窗口。
-            void OnEnter();
-            //
-            // 摘要:
-            //     离开调试窗口。
-            void OnLeave();
-            //
-            // 摘要:
-            //     调试窗口轮询。
-            //
-            // 参数:
-            //   elapseSeconds:
-            //     逻辑流逝时间，以秒为单位。
-            //
-            //   realElapseSeconds:
-            //     真实流逝时间，以秒为单位。
-            void OnUpdate(float elapseSeconds, float realElapseSeconds);
-            //
-            // 摘要:
-            //     关闭调试窗口。
-            void Shutdown();
-        }
-
         [Serializable]
         private sealed partial class ConsoleWindow : IDebuggerWindow
         {

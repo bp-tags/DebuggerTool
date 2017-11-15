@@ -4,10 +4,10 @@
 // Homepage: http://gameframework.cn/
 // Feedback: mailto:jiangyin@gameframework.cn
 //------------------------------------------------------------
-
+using UnityEngine;
 using GameFramework;
 
-namespace UnityGameFramework.Runtime
+namespace GameFramework.Debugger
 {
     public partial class DebuggerComponent
     {
@@ -23,7 +23,7 @@ namespace UnityGameFramework.Runtime
             {
                 if (updateInterval <= 0f)
                 {
-                    Log.Error("Update interval is invalid.");
+                    Debug.LogError("Update interval is invalid.");
                     return;
                 }
 
@@ -41,7 +41,7 @@ namespace UnityGameFramework.Runtime
                 {
                     if (value <= 0f)
                     {
-                        Log.Error("Update interval is invalid.");
+                        Debug.LogError("Update interval is invalid.");
                         return;
                     }
 

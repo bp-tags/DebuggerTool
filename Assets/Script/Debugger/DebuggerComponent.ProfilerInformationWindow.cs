@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Profiling;
 #endif
 
-namespace UnityGameFramework.Runtime
+namespace GameFramework.Debugger
 {
     public partial class DebuggerComponent
     {

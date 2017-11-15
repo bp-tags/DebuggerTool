@@ -8,7 +8,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace GameFramework.Debugger
 {
     /// <summary>
     /// 调试组件。
@@ -161,14 +161,12 @@ namespace UnityGameFramework.Runtime
         /// <summary>
         /// 游戏框架组件初始化。
         /// </summary>
-        protected override void Awake()
+        protected void Awake()
         {
-            base.Awake();
-
-            m_DebuggerManager = GameFrameworkEntry.GetModule<IDebuggerManager>();
+            m_DebuggerManager = new DebuggerManager();
             if (m_DebuggerManager == null)
             {
-                Log.Fatal("Debugger manager is invalid.");
+                Debug.LogError("Debugger manager is invalid.");
                 return;
             }
 
@@ -212,10 +210,10 @@ namespace UnityGameFramework.Runtime
             RegisterDebuggerWindow("Profiler/Memory/Font", m_RuntimeMemoryFontInformationWindow);
             RegisterDebuggerWindow("Profiler/Memory/GameObject", m_RuntimeMemoryGameObjectInformationWindow);
             RegisterDebuggerWindow("Profiler/Memory/Component", m_RuntimeMemoryComponentInformationWindow);
-            if (GameEntry.GetComponent<ObjectPoolComponent>() != null)
-            {
-                RegisterDebuggerWindow("Profiler/Object Pool", m_ObjectPoolInformationWindow);
-            }
+            //if (GameEntry.GetComponent<ObjectPoolComponent>() != null)
+            //{
+            //    RegisterDebuggerWindow("Profiler/Object Pool", m_ObjectPoolInformationWindow);
+            //}
             RegisterDebuggerWindow("Other/Settings", m_SettingsWindow);
             RegisterDebuggerWindow("Other/Operations", m_OperationsWindow);
         }

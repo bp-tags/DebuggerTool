@@ -8,7 +8,7 @@
 using System;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace GameFramework.Debugger
 {
     public partial class DebuggerComponent
     {
